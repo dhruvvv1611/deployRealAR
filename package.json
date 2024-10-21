@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "nodemon api/app.js",
     "build": "npm install && npm install --prefix client && npm run build --prefix client",
-    "start": "node api/app.js"
+    "prisma:generate": "prisma generate",
+    "start": "npm run prisma:generate && node api/app.js"
   },
   "keywords": [],
   "author": "",
