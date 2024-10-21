@@ -1,0 +1,60 @@
+.panoramicPage {
+  text-align: center;
+  margin: 20px;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  .panoramicContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .panoramicWrapper {
+      margin: 10px; // Margin for larger screens
+      width: 100%; // Full width on small screens
+      max-width: 500px; // Adjust max width for larger screens
+      height: auto; // Allow height to adjust according to content
+
+      // Aspect ratio for the panoramic viewer
+      a-scene {
+        width: 100%;
+        height: 300px; // Maintain a larger height for the panoramic viewer
+      }
+
+      p {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  // Media query for mobile devices
+  @media (max-width: 768px) {
+    .panoramicWrapper {
+      max-width: 90%; // More space on small screens
+      margin: 5px; // Reduce margin to bring items closer together
+      height: auto; // Allow height to adjust
+    }
+
+    a-scene {
+      height: 250px; // Increase height for mobile devices
+    }
+  }
+
+  // Media query for very small devices
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.75rem; // Adjust heading size for smaller screens
+    }
+
+    .panoramicWrapper {
+      max-width: 95%; // Max width on very small screens
+      margin: 3px; // Further reduce margin for smaller screens
+    }
+
+    a-scene {
+      height: 220px; // Maintain larger height for very small devices
+    }
+  }
+}

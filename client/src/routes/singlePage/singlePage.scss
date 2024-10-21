@@ -1,0 +1,343 @@
+@import "../../responsive.scss";
+
+.singlePage {
+  display: flex;
+  height: 100%;
+
+  .buttonsGroup {
+    display: flex;
+    flex-direction: column; // Stack buttons vertically by default (for mobile)
+    gap: 8px; // Reduced space between buttons
+    margin-top: 10px; // Space above buttons
+  
+    @media (min-width: 768px) {
+      flex-direction: row; // Change to row on larger screens
+      justify-content: space-between; // Space between buttons on larger screens
+    }
+  
+    button {
+      padding: 8px 12px; // Reduced padding for smaller buttons
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease; // Transition effects
+      width: 100%; // Full width on mobile
+      font-size: 0.9rem; // Smaller font size for compactness
+  
+      // Set a max-width for buttons on larger screens
+      @media (min-width: 768px) {
+        width: auto; // Allow buttons to size based on content
+      }
+    }
+  
+    .viewModelsBtn {
+      background-color: #f0f0f0; // Light grey
+      color: #333; // Dark text
+  
+      &:hover {
+        background-color: #e0e0e0; // Darker grey on hover
+      }
+    }
+  
+    .viewPanoramicBtn {
+      background-color: #dff0ff; // Light blue
+      color: #0056b3; // Dark blue text
+  
+      &:hover {
+        background-color: #cce0ff; // Darker blue on hover
+      }
+    }
+
+    .sendMessage{
+      background-color: #dff0ff; // Light blue
+      color: #0056b3; // Dark blue text
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+  
+      &:hover {
+        background-color: #cce0ff; // Darker blue on hover
+      }
+    }
+
+    .saveButton{
+      background-color: #dff0ff; // Light blue
+      color: #0056b3; // Dark blue text
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+  
+      &:hover {
+        background-color: #cce0ff; // Darker blue on hover
+      }
+    }
+
+    .updateButton{
+      background-color: #e2f8e0; // Light green
+      color: #3d8f3d; // Dark green text
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+  
+      &:hover {
+        background-color: #c6e7c6; // Darker green on hover
+      }
+    }
+
+    .deleteButton{
+      background-color: #f8d7da; // Light red
+      color: #721c24; // Dark red text
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+  
+      &:hover {
+        background-color: #f5c6cb; // Darker red on hover
+      }
+    }
+
+
+  
+    .openStreetViewBtn {
+      background-color: #ffe6e6; // Light red
+      color: #cc0000; // Dark red text
+  
+      &:hover {
+        background-color: #ffcccc; // Darker red on hover
+      }
+    }
+  }
+  
+  
+  @include md {
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .details {
+    flex: 3;
+    height: 100%;
+    overflow-y: scroll;
+
+    @include md {
+      flex: none;
+      height: max-content;
+      margin-bottom: 50px;
+    }
+
+    .wrapper {
+      padding-right: 50px;
+
+      @include lg {
+        padding-right: 20px;
+      }
+      @include md {
+        padding-right: 0px;
+      }
+
+      .info {
+        margin-top: 50px;
+
+        .top {
+          display: flex;
+          justify-content: space-between;
+
+          @include sm {
+            flex-direction: column;
+            gap: 20px;
+          }
+
+          .post {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            h1 {
+              font-weight: 400;
+              line-height: 1.5; // Added line height for readability
+            }
+            .address {
+              display: flex;
+              gap: 5px;
+              align-items: center;
+              color: #888;
+              font-size: 14px;
+
+              img {
+                width: 16px;
+                height: 16px;
+              }
+            }
+            .price {
+              padding: 5px;
+              background-color: rgba(254, 205, 81, 0.438);
+              border-radius: 5px;
+              width: max-content;
+              font-size: 20px;
+              font-weight: 300;
+            }
+          }
+
+          .user {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 0px 50px;
+            border-radius: 10px;
+            background-color: rgba(254, 205, 81, 0.209);
+            font-weight: 600;
+            position: relative;
+
+            @include sm {
+              padding: 20px 50px;
+            }
+
+            img {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+        }
+
+        .bottom-flex {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+
+          @include sm {
+            flex-direction: column;
+          }
+        }
+
+        .bottom {
+          margin-top: 50px;
+          color: #555;
+          line-height: 20px;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  .features {
+    flex: 2;
+    background-color: #fcf5f3;
+    height: 100%;
+    overflow-y: scroll;
+    margin-left: 20px;
+
+    @include md {
+      flex: none;
+      height: max-content;
+      margin-bottom: 50px;
+    }
+
+    .wrapper {
+      padding: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include md {
+        padding: 20px;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .title {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 10px;
+        line-height: 1.4; // Line height for readability
+      }
+
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+          background-color: rgba(254, 205, 81, 0.209);
+        }
+
+        .featureText {
+          span {
+            font-weight: bold;
+          }
+          p {
+            font-size: 14px;
+            line-height: 1.5; // Improved readability
+          }
+        }
+      }
+
+      .listVertical {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 10px;
+        background-color: white;
+        border-radius: 10px;
+        justify-content: center;
+      }
+
+      .listHorizontal {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 10px;
+        background-color: white;
+        border-radius: 10px;
+        gap: 20px;
+
+        @include lg {
+          flex-direction: column;
+        }
+      }
+
+      .sizes {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        @include lg {
+          font-size: 12px;
+        }
+
+        @include sm {
+          font-size: 12px;
+          flex-direction: column;
+        }
+
+        .size {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background-color: white;
+          padding: 10px;
+          border-radius: 5px;
+        }
+      }
+
+      .mapContainer {
+        width: 100%;
+        height: 200px;
+
+        @include lg {
+          height: 300px; // Increased map height for larger screens
+        }
+      }
+    }
+  }
+}

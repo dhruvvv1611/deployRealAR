@@ -1,0 +1,35 @@
+.modelsPage {
+    padding: 20px;
+    text-align: center;
+  
+    h1 {
+      margin-bottom: 20px;
+    }
+  
+    .modelsContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      overflow-y: auto;
+  
+      .modelWrapper {
+        margin: 10px;
+        width: 900px; // Adjust as needed
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .qrCodeContainer {
+        display: flex;
+        justify-content: center; /* Center QR code horizontally */
+        align-items: center; /* Center QR code vertically */
+        margin-top: 20px; /* Space above the QR code */
+        padding: 20px; /* Space around the QR code */
+        background: #f8f8f8; /* Optional background color */
+      }
+      
+    }
+  }
+  
